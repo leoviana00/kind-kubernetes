@@ -4,21 +4,36 @@
 
 - Criando um cluster kubernetes localmente utilizando kind
 
+## Docker 
+- Instalação do docker
+```console
+ $ sudo curl -L https://get.docker.com/ | bash
+ $ sudo usermod -aG docker $USER
+```
 ## Kind
 
 - Permite criar um cluster kubernetes utilizando containers docker
 
-## Instalação
-```
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.9.0/kind-linux-amd64
-chmod +x ./kind
-mv ./kind /some-dir-in-your-PATH/kind
+- Instalação
+```console
+$ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.9.0/kind-linux-amd64
+$ chmod +x ./kind
+$ sudo mv ./kind /usr/local/bin/
 ```
 # Criando Cluster
 
 ## Inicialização do cluster
 ```console
 kind create cluster
+```
+# Kubectl
+## Instalação 
+```console
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+$ chmod +x kubectl
+
+$ sudo mv kubectl /usr/local/bin/
 ```
 
 ## Verificando os nodes
@@ -136,6 +151,8 @@ CONTAINER ID        IMAGE                  COMMAND                  CREATED     
 
 - Agora pode-se notar que um dos containes tem um bind para da minha porta 8080 com a 30001 do container.
 
+
+
 # Deployment
 
 ## Realizando o deploy do serviço
@@ -177,6 +194,7 @@ localhost:8080/api-docs
 ```
 
 ![](./images/api-produto.PNG)
+
 ## Referências
 
 - https://kind.sigs.k8s.io/docs/user/quick-start/
