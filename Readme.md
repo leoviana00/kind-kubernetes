@@ -67,6 +67,8 @@ kind delete cluster
 
 ## Arquivo yaml
 
+- Arquivo de configuração para criar vários nodes
+
 ```
 kind: cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -101,6 +103,8 @@ kind delete cluster --name multinode
 # Extra Port Mappings
 
 ## Ajustando as configurações do Kind
+
+- Adicionando configuração do bind para acessar a api
 
 ```
 kind: Cluster
