@@ -4,12 +4,26 @@
 
 - Criando um cluster kubernetes localmente utilizando kind
 
-## Docker 
-- Instalação do docker
+## Instalando o `docker` - Ignorar essa etapa caso ja tenha o docker instalado
+
 ```console
- $ sudo curl -L https://get.docker.com/ | bash
- $ sudo usermod -aG docker $USER
+ sudo curl -L https://get.docker.com/ | bash
+
+ sudo usermod -aG docker $USER
 ```
+
+- Em caso de erro:  Options to Fix sub-process /usr/bin/dpkg returned an error code (1)
+
+1. Method 1: Reconfigure dpkg Database
+```console
+sudo dpkg --configure -a
+```
+2. Caso não funcione: Method 2: Force-Install the Software
+```console
+sudo apt-get install -f
+```
+
+
 ## Kind
 
 - Permite criar um cluster kubernetes utilizando containers docker
